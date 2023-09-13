@@ -3,22 +3,22 @@
 %global pkgname Xfce-Theme-Manager
 Name:		xfce-theme-manager
 Version:	0.3.9
-Release:	%autorelease
+Release:	1
 Summary:	A theme manager for Xfce
 License:	GPLv3	
+Group:    Graphical desktop/Xfce
 URL:		https://github.com/KeithDHedger/Xfce-Theme-Manager
-# wget https://github.com/KeithDHedger/Xfce-Theme-Manager/archive/xfce-theme-manager-0.3.8.tar.gz
 Source0:	https://github.com/KeithDHedger/Xfce-Theme-Manager/archive/%{pkgname}-%{version}.tar.gz
+
 BuildRequires:	autoconf
 BuildRequires:	cairo-devel
 BuildRequires:	desktop-file-utils
-BuildRequires:	gcc-c++
 BuildRequires:	make
 BuildRequires:	pkgconfig(gdk-2.0)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	xfce4-dev-tools
-BuildRequires:	xfconf-devel
+BuildRequires:	pkgconfig(libxfconf-0)
 
 %description
 A theme manager allowing easy configuration of themes,
@@ -26,7 +26,6 @@ window borders, controls, icons and cursors for Xfce
 
 %prep
 %autosetup -n %{pkgname}-%{version} -p1
-
 
 %build
 #run autoreconf, not needed when upstream moves to  new automake
@@ -59,6 +58,3 @@ desktop-file-install	\
 %{_datadir}/Xfce-Theme-Manager/scripts
 %{_mandir}/man1/%{name}.1.*
 %{_mandir}/*/man1/%{name}.1.*
-
-%changelog
-%autochangelog
