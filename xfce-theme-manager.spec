@@ -52,6 +52,7 @@ desktop-file-install	\
 
 %files
 %doc ChangeLog* Xfce-Theme-Manager/resources/docs/gpl-3.0.txt
+%doc  %{_datadir}/doc/xfce-theme-manager-0.3.9/gpl-3.0.txt
 %{_bindir}/%{name}
 %{_datadir}/applications/%{pkgname}.desktop
 %{_datadir}/pixmaps/%{name}.png
